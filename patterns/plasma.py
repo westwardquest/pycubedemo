@@ -5,10 +5,11 @@
 import random
 import cubehelper
 import math
+import pygame
 
 DT = 1.0/20
-FADE_TIME = 5.0
-ACTIVE_TIME = 5.0
+FADE_TIME = 20
+ACTIVE_TIME = 20
 
 def color_from_val(val):
     if val < 85:
@@ -30,9 +31,20 @@ class Pattern(object):
         self.offset = 0.0
         self.fade_distance = 0.0
         self.timer = 0.0
+        pygame.init()
+        pygame.mixer.init( )
+        pygame.mixer.set_num_channels(2)
+        self.pulse = pygame.mixer.Sound('patterns/pulse.wav')
+        self.pulseplayed = False
         return DT
 
     def tick(self):
+        if self.pulseplayed == False:
+            self.pulse.play()
+            self.pulseplayed = True
+        if self.timer > FADE_TIME + ACTIVE_TIME:
+            pygame.mixer.Sound.fadeout(self.pulse, (FADE_TIME*1000) - 500)
+
         self.timer += DT
         self.offset -= DT / 1.0
         if self.offset < 0:

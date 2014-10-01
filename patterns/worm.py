@@ -6,7 +6,7 @@ import random
 import cubehelper
 import math
 
-DT = 1.0/20
+DT = 0.3260869565 / 2
 SPEED = 10
 MAX_LENGTH = 50
 IQ = 10

@@ -12,18 +12,23 @@ import signal
 import cubehelper
 import random
 
+TEMPO = 10.4347826087
+
 pattern_details = [
     # name, args, duration
-    ('plasma', '', 15),
-    ('boxflip', '', 10),
-    ('cubezoom','',10),
-    ('spiral','',10),
-    ('fireworks','',10),
-    ('cubefill','',10),
-    ('swipe','',10),
-    ('wave','',10),
-    ('fade','',10),
-    ('worm','',10),
+    ('plasma', '', 60.0),
+    ('demomusicstart', '', 7.217370),
+    ('boxflip', '', TEMPO),
+    ('cubezoom','',TEMPO),
+    ('spiral','',TEMPO),
+    ('fireworks','',TEMPO),
+    ('cubefill','',TEMPO),
+    ('swipe','',TEMPO),
+    ('wave','',TEMPO),
+    ('worm','',TEMPO),
+    ('boxflip', '', TEMPO),
+    ('spiral','',TEMPO),
+    ('fade','',TEMPO + 7.0),
 ]
 
 def load_patterns(cube, details):
