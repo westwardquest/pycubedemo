@@ -30,7 +30,7 @@ pattern_details = [
     ('wave','',TEMPO),
     ('worm','',TEMPO * 2),
     ('boxflip', '', TEMPO),
-    ('fade','',TEMPO + 7.0),
+    ('fade','',TEMPO + 4.0),
     ('pause','', 3.0),
     ('weathermatt','', 160.0),
     
