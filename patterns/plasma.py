@@ -33,6 +33,7 @@ class Pattern(object):
         self.timer = 0.0
         pygame.init()
         pygame.mixer.init( )
+        pygame.mixer.stop()
         pygame.mixer.set_num_channels(2)
         self.pulse = pygame.mixer.Sound('patterns/pulse.wav')
         self.pulseplayed = False
