@@ -26,6 +26,8 @@ NIGHT_START = SUN_DOWN + 22.5
 END_ALL = 140.0
 print SUN_DOWN
 
+LIGHTNING_STICK_TICKS = int(0.3 / DT)
+
 def loadsounds(dirname, namelist):
 	sounds = []
 	for name in namelist:
@@ -211,19 +213,20 @@ class Pattern(object):
 
 		if len(self.lpos) == 0:
 			if self.timer > LIGHTNING_START and self.timer < STORM_END - 2.0 and \
-					random.uniform(0.0, 1.0) < 0.075:
+					random.uniform(0.0, 1.0) < 0.1:
 				cloud = random.choice(self.clouds)
 				self.lx = clip(int(cloud[0]), 0, 7)
 				self.ly = clip(int(cloud[1]), 0, 7)
 				self.lz = 5
 			else:
-				self.lz = -1
+				self.lz = -LIGHTNING_STICK_TICKS
 		else:
 			self.lz -= 1
 			self.lx = clip(self.lx + random.randint(-1, 1), 0, 7)
 			self.ly = clip(self.ly + random.randint(-1, 1), 0, 7)
 		if self.lz < 0:
-			self.lpos = []
+			if self.lz < -LIGHTNING_STICK_TICKS:
+				self.lpos = []
 		else:
 			self.lpos.append((self.lx, self.ly, self.lz))
 
