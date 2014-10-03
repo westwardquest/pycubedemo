@@ -12,23 +12,29 @@ import signal
 import cubehelper
 import random
 
+# pbrook todo: check transitions as doesn't always match up, make lightning in weather stay longer, stars more yellow, wave is running 50fps
+
 TEMPO = 10.4347826087
 
 pattern_details = [
     # name, args, duration
     ('plasma', '', 60.0),
+    ('pause','', 4.0),
     ('demomusicstart', '', 7.217370),
     ('boxflip', '', TEMPO),
     ('cubezoom','',TEMPO),
+    ('cubefill','',TEMPO),
     ('spiral','',TEMPO),
     ('fireworks','',TEMPO),
-    ('cubefill','',TEMPO),
     ('swipe','',TEMPO),
     ('wave','',TEMPO),
-    ('worm','',TEMPO),
+    ('worm','',TEMPO * 2),
     ('boxflip', '', TEMPO),
-    ('spiral','',TEMPO),
     ('fade','',TEMPO + 7.0),
+    ('pause','', 3.0),
+    ('weathermatt','', 160.0),
+    
+
 ]
 
 def load_patterns(cube, details):

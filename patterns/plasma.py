@@ -40,6 +40,7 @@ class Pattern(object):
 
     def tick(self):
         if self.pulseplayed == False:
+            pygame.mixer.Sound.set_volume(self.pulse,0.70)
             self.pulse.play()
             self.pulseplayed = True
         if self.timer > FADE_TIME + ACTIVE_TIME:
