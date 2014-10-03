@@ -4,8 +4,8 @@ import os
 import math
 import pygame
 
+DT = 1.0/10
 STARTDELAY = 2.0
-END = STARTDELAY + 5.217370
 
 def loadsounds(dirname, namelist):
 	sounds = []
@@ -24,13 +24,12 @@ class Pattern(object):
 		self.isaacplayed = False
 		self.double_buffer = True
 		self.timer = 0.0
-		return 1.0 / 20
+		return DT
 
 	def tick(self):
 		if self.isaacplayed == False and self.timer > STARTDELAY:
 			self.isaac.play()
 			self.sleepyplayed = True
-		self.timer += 0.05
-		if self.timer >= END:
-			raise StopIteration
+		self.timer += DT
+                raise StopIteration
 
