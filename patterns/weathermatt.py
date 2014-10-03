@@ -279,7 +279,7 @@ class Pattern(object):
 				self.stars.append(star)
 			elif random.uniform(0.0, 1.0) < .20:
 				thissound = random.choice(self.starssfx)
-				pygame.mixer.Sound.set_volume(thissound, random.uniform(0.05, 0.30))
+				pygame.mixer.Sound.set_volume(thissound, random.uniform(0.10, 0.50))
 				thissound.play()
 
 		i = 0
