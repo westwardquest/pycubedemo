@@ -6,7 +6,7 @@ import random
 import cubehelper
 import math
 
-DT = 0.3260869565 / 2
+DT = 1.0/20
 SPEED = 10
 MAX_LENGTH = 50
 IQ = 10
@@ -93,3 +93,4 @@ class Pattern(object):
                 self.age()
                 self.tries = 0
                 raise StopIteration
+                #return

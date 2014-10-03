@@ -7,7 +7,7 @@ import cubehelper
 import math
 
 speed = 2.0
-DT = 1.0/50
+DT = 1.0/25
 
 class Pattern(object):
     def init(self):
