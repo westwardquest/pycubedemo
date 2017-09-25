@@ -2,25 +2,6 @@ import cubehelper
 import random
 import math
 
-'''def compo(pattArray,angle):
-    for num in pattArray["high"]:
-        if (angle >= num[0]) and (angle <= num[1]):
-            comp = 1.0
-
-    for num in pattArray["low"]:
-        if (angle >= num[0]) and (angle <= num[1]):
-            comp = 0.0
-
-    for num in pattArray["up"]:
-        if (angle >= num[0]) and (angle <= num[1]):
-            comp = (angle - num[0])/(num[1]-num[0]+0.0)
-
-    for num in pattArray["down"]:
-        if (angle >= num[0]) and (angle <= num[1]):
-            comp = (num[1] - angle)/(num[1]-num[0]+0.0)
-
-    return comp'''
-
 def rainbow(iter,step):
     def compo(pattArray,angle):
         for num in pattArray["high"]:
@@ -84,7 +65,7 @@ class Pattern(object):
         for x in range(0, self.cube.size):
             for y in range(0, self.cube.size):
                 z = math.floor(math.sin(self.sinwidth*(self.iter+(x+y)))*3.5+4)
-                self.cube.set_pixel((x, y, z), rainbow(self.iter, 10))
+                self.cube.set_pixel((x, y, z), rainbow(self.iter+x, 10))
 
         self.iter += self.delta
         if (math.sin(self.sinwidth*self.iter)+1)/2 < 0.1:
