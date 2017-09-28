@@ -51,7 +51,7 @@ class Pattern(object):
     def init(self):
         self.iter = 1
         self.delta = 1
-        self.sinwidth = 0.4
+        self.sinwidth = 0.3
         self.color = cubehelper.random_color()
         self.prevColor = cubehelper.random_color()
         
@@ -64,8 +64,8 @@ class Pattern(object):
 
         for x in range(0, self.cube.size):
             for y in range(0, self.cube.size):
-                z = math.floor(math.sin(self.sinwidth*(self.iter+(x+y)))*3.5+4)
-                self.cube.set_pixel((x, y, z), rainbow(self.iter+x, 10))
+                z = math.floor(math.sin(self.sinwidth*(self.iter+(x+y)))*3.2+4)
+                self.cube.set_pixel((x, y, int(z)), rainbow(self.iter+x, 10))
 
         self.iter += self.delta
         if (math.sin(self.sinwidth*self.iter)+1)/2 < 0.1:
