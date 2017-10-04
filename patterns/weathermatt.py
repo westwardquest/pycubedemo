@@ -266,7 +266,7 @@ class Pattern(object):
 			self.cube.set_pixel(pos, (255, 255, 0))
 			if pos[2] == 0:
 				thissound = random.choice(self.lightningsfx)
-				pygame.mixer.Sound.set_volume(thissound, random.uniform(0.40, 0.80))
+				pygame.mixer.Sound.set_volume(thissound, random.uniform(0.30, 0.50))
 				thissound.play()
 
 		self.sun.move(self.timer > SUN_UP and self.timer < SUN_DOWN, self.timer > SUN_DOWN, sunbright)

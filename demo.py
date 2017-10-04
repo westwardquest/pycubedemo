@@ -19,8 +19,8 @@ TEMPO = 10.4347826087
 pattern_details = [
     # name, args, duration
     ('plasma', '', 60.0),
-    ('pause','', 4.0),
-    ('demomusicstart', '', 7.217370),
+    ('pause', '', 0.5),
+    ('demomusicstartmute', '', 2.217370),
     ('boxflip', '', TEMPO),
     ('cubezoom','',TEMPO),
     ('cubefill','',TEMPO),
@@ -33,7 +33,6 @@ pattern_details = [
     ('fade','',TEMPO + 4.0),
     ('pause','', 3.0),
     ('weathermatt','', 160.0),
-    
 
 ]
 

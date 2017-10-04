@@ -28,6 +28,7 @@ class Pattern(object):
 
 	def tick(self):
 		if self.isaacplayed == False and self.timer > STARTDELAY:
+			pygame.mixer.stop()
 			self.isaac.play()
 			self.sleepyplayed = True
 		self.timer += DT
